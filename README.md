@@ -11,6 +11,7 @@ Fish wrapper for `pi` that turns throwaway `work-*` dirs into named, resumable s
 - resumes by id or query with `pi resume`
 - jumps to last session with `pi last`
 - prunes stale empty dirs with `pi clean`
+- splits helper logic into small Fish source files under `fish/functions/pi-lib/`
 
 ## Commands
 
@@ -28,13 +29,19 @@ pi clean 14 --yes
 
 ## Install
 
-Copy function into Fish config:
+Copy bundled Fish files into config:
 
 ```fish
-mkdir -p ~/.config/fish/functions
-cp fish/functions/pi.fish ~/.config/fish/functions/pi.fish
+cp -R fish/. ~/.config/fish/
 source ~/.config/fish/functions/pi.fish
 ```
+
+This installs:
+
+- `functions/pi.fish`
+- `functions/pi-lib/common.fish`
+- `functions/pi-lib/listing.fish`
+- `functions/pi-lib/runtime.fish`
 
 ## Notes
 
@@ -42,3 +49,7 @@ source ~/.config/fish/functions/pi.fish
 - `used` = dir has non-metadata files
 - `meta` = only `.pi-session` and `SESSION.md`
 - `empty` = legacy empty dir
+
+## License
+
+MIT
