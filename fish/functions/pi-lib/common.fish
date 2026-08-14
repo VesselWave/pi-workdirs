@@ -11,11 +11,11 @@ function __pi_work_root
 end
 
 function __pi_metadata_path --argument-names dir
-    printf '%s/.pi-session\n' "$dir"
+    printf '%s/.pi-state\n' "$dir"
 end
 
 function __pi_card_path --argument-names dir
-    printf '%s/SESSION.md\n' "$dir"
+    printf '%s/PI-CARD.txt\n' "$dir"
 end
 
 function __pi_now
@@ -149,7 +149,7 @@ function __pi_write_metadata --argument-names dir source_cwd label
 end
 
 function __pi_content_count --argument-names dir
-    find "$dir" -mindepth 1 -maxdepth 1 ! -name '.pi-session' ! -name 'SESSION.md' | wc -l | string trim
+    find "$dir" -mindepth 1 -maxdepth 1 ! -name '.pi-state' ! -name 'PI-CARD.txt' | wc -l | string trim
 end
 
 function __pi_session_dirs

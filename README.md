@@ -5,8 +5,6 @@ Fish wrapper for `pi` that turns throwaway `work-*` dirs into named, resumable s
 ## What it does
 
 - creates labeled work dirs under `~/repos/test`
-- writes session metadata to `.pi-session`
-- writes human summary to `SESSION.md`
 - lists sessions with `pi sessions` / `pi ls`
 - resumes by id or query with `pi resume`
 - jumps to last session with `pi last`
@@ -46,9 +44,8 @@ This installs:
 ## Notes
 
 - `live` = tmux session exists
-- `used` = dir has non-metadata files
-- `meta` = only `.pi-session` and `SESSION.md`
-- `empty` = legacy empty dir
+- `used` = dir has files
+- `empty` = dir has no files
 
 ## License
 
